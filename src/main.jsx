@@ -4,27 +4,17 @@ import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Scratch from "./components/Scratch.jsx";
 import Left from "./components/Left";
-import Middle from "./components/Middle";
-import Right from "./components/Right";
-import midRigh from "./components/midRigh.jsx";
+import Search from "./components/Search.jsx";
+import Right from "./components/Right.jsx";
+import Text from "./components/Text.jsx";
+import NewNotes from "./NewNotes.jsx";
 
-const New = () => {
-    return (
-        <>
-        <div className="flex w-[80%]">
-            <Middle />
-            <Scratch />
-        </div>
-        </>
-    )
-}
-
-const Mid_right = () => {
+const Begin = () => {
   return (
     <>
       <div className="flex w-[80%]">
         {/* <Left /> */}
-        <Middle />
+        <Search />
         <Right />
       </div>
     </>
@@ -37,8 +27,6 @@ const AppLayout = () => {
       <div className="flex">
         <Left />
         <Outlet />
-        {/* <Middle />
-        <Right /> */}
       </div>
     </>
   );
@@ -51,16 +39,20 @@ const appRoute = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Mid_right />,
+        element: <Begin />,
       },
       {
         path: "/scratch",
         element: <Scratch />,
       },
       {
-        path: "new_note",
-        element: <New />
-      }
+        path: "/new_note",
+        element: <NewNotes />,
+      },
+      // {
+      //   path: "/notes",
+      //   element: <Notes />
+      // }
     ],
   },
 ]);

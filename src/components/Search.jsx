@@ -1,7 +1,7 @@
-function Middle() {
+function Search() {
   return (
     <>
-      <div className=" bg-slate-700 w-1/4 h-screen">
+      <div className=" bg-slate-700 w-[23.2%] h-screen">
         <div className="pt-1 pl-1 border-b border-b-grey pb-1">
           <input
             type="text"
@@ -13,4 +13,4 @@ function Middle() {
     </>
   );
 }
-export default Middle;
+export default Search;
