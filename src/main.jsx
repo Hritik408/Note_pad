@@ -8,6 +8,7 @@ import NewNotes from "./components/NewNotes.jsx";
 import Begin from "./components/Begin.jsx";
 import appStore from "./utils/appStore.jsx";
 import { Provider } from "react-redux";
+import Trashitem from "./components/Trashitem.jsx";
 
 
 const AppLayout = () => {
@@ -41,6 +42,10 @@ const appRoute = createBrowserRouter([
         path: "/new_note",
         element: <NewNotes />,
       },
+      {
+        path: "/trash",
+        element: <Trashitem />
+      }
       
     ],
   },

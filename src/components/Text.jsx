@@ -23,7 +23,7 @@ function Text() {
          <textarea 
          className="bg-slate-400 h-screen w-full"
          value={inputText}
-         placeholder="Type something here..."
+        //  placeholder="Type something here..."
          onChange={handleChange} 
          >
           </textarea>

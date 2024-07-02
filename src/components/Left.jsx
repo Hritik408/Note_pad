@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import Trashitem from "./Trashitem";
 
 function Left() {
+    
+
   return (
     <>
       <div className=" bg-slate-600 w-[20%] h-screen">
@@ -27,16 +30,21 @@ function Left() {
             <span className="text-white pl-3 pr-36">🧾 Notes</span>
           </button>
         </div>
+
         <div className="hover:bg-blue-700 pt-1 pb-1">
           <button>
             <span className="text-white pl-3 pr-32">⭐ Favorite</span>
           </button>
         </div>
+
         <div className="hover:bg-blue-700 pt-1 pb-1">
+          <Link to="/trash">
           <button>
             <span className="text-white pl-3 pr-36">🗑️ Trash</span>
           </button>
+          </Link>
         </div>
+
         <div className="hover:bg-blue-700 pt-1 pb-1">
           <button>
             <span className="text-white pl-3 pr-32">📚categories</span>
