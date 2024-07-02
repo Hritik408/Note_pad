@@ -1,11 +1,11 @@
-import Middle from "./components/Search";
-import Text from "./components/Text";
+import Search from "./Search";
+import Text from "./Text";
 
 function NewNotes() {
   return (
     <>
       <div className="flex w-[80%]">
-        <Middle />
+        <Search />
         <Text />
       </div>
     </>

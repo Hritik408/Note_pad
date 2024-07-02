@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Initial from "./Initial";
 function Scratch() {
 
     const initial_text = [
