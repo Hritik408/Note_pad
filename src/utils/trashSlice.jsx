@@ -8,8 +8,9 @@ const trashSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      const newItem = {...action.payload, id:uuidv4()};
+      const newItem = {text:action.payload, id: uuidv4()};
       state.items.push(newItem);
+      // console.log(items);
     },
     removeItem: (state, action) => {
       // state.items.pop();
