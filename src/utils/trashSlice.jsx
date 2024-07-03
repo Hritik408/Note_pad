@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid"
 
 const trashSlice = createSlice({
   name: "trash",
@@ -7,10 +8,13 @@ const trashSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
+      const newItem = {...action.payload, id:uuidv4()};
+      state.items.push(newItem);
     },
     removeItem: (state, action) => {
-      state.items.pop();
+      // state.items.pop();
+     state.items = state.items.filter(item => item.id !== action.payload.id);
+
     },
     clearTrash: (state) => {
       state.items.length = 0;
@@ -18,6 +22,6 @@ const trashSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, clearTrash } = cartSlice.actions;
+export const { addItem, removeItem, clearTrash } = trashSlice.actions;
 
 export default trashSlice.reducer;  // here we export one reducer

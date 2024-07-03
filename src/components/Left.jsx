@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Trashitem from "./Trashitem";
 
 function Left() {
-    
 
   return (
     <>

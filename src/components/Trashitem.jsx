@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux"
+import Search from "./Search";
+import Trash_area from "./Trash_area";
 
 function Trashitem() {
 
@@ -6,9 +8,8 @@ function Trashitem() {
 
 return (
     <>
-    <div>
-        "hello"
-    </div>
+    <Search />
+    <Trash_area items = {item}/>
     </>
 )
 }

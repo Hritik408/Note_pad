@@ -6,7 +6,7 @@ function Text() {
 
     const [inputText, setinputText] = useState(" ");
     const handleChange = (e) => {
-        settext(e.target.value);
+        setinputText(e.target.value);
     }
 
     const dispatch = useDispatch();
@@ -18,8 +18,8 @@ function Text() {
     return (
         <>
         <div className="bg-slate-600 w-[77%]">
-            {/* <button className="text-red-500 mr-3" >Favourite</button> */}
-            {/* <button className="text-blue-500" onClick={handleTrash}>Trash</button> */}
+        <button className="text-blue-500" onClick={handleSave_trash}>Trash</button>
+        <button className="text-purple-500 ml-3" onClick={handleSave_trash}>Favorite</button>
          <textarea 
          className="bg-slate-400 h-screen w-full"
          value={inputText}
@@ -27,8 +27,6 @@ function Text() {
          onChange={handleChange} 
          >
           </textarea>
-    <button className="text-blue-500" onClick={handleSave_trash}>Trash</button>
-
         </div>
         </>
     )
