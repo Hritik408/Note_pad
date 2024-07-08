@@ -5,8 +5,10 @@ import { addItem } from "../utils/trashSlice";
 function Text() {
 
     const [inputText, setinputText] = useState(" ");
-    
+
     const dispatch = useDispatch();
+    // const items = useSelector(state => state.trash.items);
+
     const handleSave_trash = () => {
          dispatch(addItem(inputText));
          setinputText(''); // clear the text after saving

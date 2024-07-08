@@ -8,14 +8,13 @@ const trashSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      // const newItem = {text:action.payload, id: uuidv4()};
-      // state.items.push(newItem);
-      // console.log(items);
-        state.items.push(action.payload);
+      const newItem = {text: action.payload, id: uuidv4()};
+      state.items.push(newItem);
+        // state.items.push(action.payload);
       },
     removeItem: (state) => {
-      state.items.pop();
-    //  state.items = state.items.filter(item => item.id !== action.payload.id);
+      // state.items.pop();
+     state.items = state.items.filter(item => item.id !== action.payload.id);
 
     },
     clearTrash: (state) => {
