@@ -4,7 +4,7 @@ import Text from "./Text";
 function NewNotes() {
   return (
     <>
-      <div className="flex w-[80%]">
+      <div className="flex w-[84%]">
         <Search />
         <Text />
       </div>

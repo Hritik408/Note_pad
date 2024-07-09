@@ -14,10 +14,10 @@ function Scratch() {
 
   return (
     <>
-      <div className="bg-gray-700 w-[80%] h-screen">
+      <div className="bg-gray-700 w-[85%] h-screen">
         
       <textarea
-        className="w-full h-full bg-gray-700"
+        className="pl-1 w-full h-full bg-gray-700 text-white" 
         value={text}
         onChange={handleChange}
         >

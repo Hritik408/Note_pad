@@ -8,20 +8,18 @@ import NewNotes from "./components/NewNotes.jsx";
 import Begin from "./components/Begin.jsx";
 import appStore from "./utils/appStore.jsx";
 import { Provider } from "react-redux";
-import Trashitem from "./components/Trashitem.jsx";
-
+import Trash from "./components/Trash.jsx";
 
 const AppLayout = () => {
   return (
-    <Provider store = {appStore}>
-         <> 
-      <div className="flex">
-        <Left />
-        <Outlet />
-      </div>
-     </> 
-     </Provider>
-  
+    <Provider store={appStore}>
+      <>
+        <div className="flex">
+          <Left />
+          <Outlet />
+        </div>
+      </>
+    </Provider>
   );
 };
 
@@ -44,9 +42,8 @@ const appRoute = createBrowserRouter([
       },
       {
         path: "/trash",
-        element: <Trashitem />
-      }
-      
+        element: <Trash />,
+      },
     ],
   },
 ]);
