@@ -8,7 +8,7 @@ const Trash_area = () => {
    const dispatch = useDispatch();
 
   const handleRemoveItem = (id) => {
-    dispatch(removeItem(id));
+    dispatch(removeItem({id}));
 };
 
 

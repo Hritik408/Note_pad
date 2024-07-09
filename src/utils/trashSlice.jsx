@@ -12,9 +12,10 @@ const trashSlice = createSlice({
       state.items.push(newItem);
         // state.items.push(action.payload);
       },
-    removeItem: (state) => {
+    removeItem: (state, action) => {
       // state.items.pop();
      state.items = state.items.filter(item => item.id !== action.payload.id);
+    //  state.items = state.items.filter(item => item.id !== action.payload.id);
 
     },
     clearTrash: (state) => {
