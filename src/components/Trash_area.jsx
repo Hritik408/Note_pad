@@ -11,6 +11,8 @@ const Trash_area = () => {
   const [textLarge, settextLarge] = useState(false);
   const [showIcon, setshowIcon] = useState(false);
 
+  const [changeBackground, setchangeBackground] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleRemoveItem = (id) => {
@@ -21,12 +23,15 @@ const Trash_area = () => {
     settextLarge(!textLarge);
     setshowIcon(!showIcon);
   };
+
+  const toggleBackground = () => {
+    setchangeBackground(!changeBackground);
+  }
   
 
   return (
     <>
-    
-    <div className="bg-stone-200 w-[62%] flex flex-col h-screen">
+    <div className={`${changeBackground ? "bg-gray-700" : "bg-stone-200"} w-[62%] flex flex-col h-screen" ` }>
 
 <div className="flex flex-col flex-grow">
   {items.map((item) => (
@@ -34,7 +39,7 @@ const Trash_area = () => {
       key={item.id}
       className="flex justify-between p-1 m-1 border-b-2 border-neutral-300"
     >
-      <div className={`text ${textLarge ? "text-2xl" : " "}`}>
+      <div className={` ${textLarge ? "text-2xl" : " "}`}>
         {item.text}
       </div>
       <button
@@ -60,6 +65,10 @@ const Trash_area = () => {
               ) : (
                 <HiEye className="ml-2 mt-1 text-white text-xl" />
               )}
+            </button>
+
+            <button onClick={toggleBackground}>
+              bright
             </button>
         
 
