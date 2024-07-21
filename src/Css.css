@@ -1,0 +1,17 @@
+.container {
+    position: relative;
+  }
+  
+  .textarea {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .input-overlay {
+    position: absolute;
+    top: 10px; /* Adjust the position as needed */
+    left: 10px; /* Adjust the position as needed */
+    z-index: 2;
+    background: white; /* Ensure input has a background to be readable */
+  }
+  
