@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import { HiEye } from "react-icons/hi";
 import { IoDocumentTextOutline, IoMoonOutline } from "react-icons/io5";
 import { GoSun } from "react-icons/go";
-import Clock from "react-clock";
 
 const Trash_area = () => {
   const items = useSelector((store) => store.trash.items);

@@ -2,10 +2,13 @@ import React, { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/trashSlice";
 import UserContext from "../utils/UserContext";
+import { addItems } from "../utils/newnotesSlice";
 
-function Text() {
-  const [inputText, setinputText] = useState("");
+function Text({myvalue}) {
+
+  const [inputText, setinputText] = useState(myvalue);
   const [isSaved, setisSaved] = useState(false);
+  const { loggedInUser, setuserName } = useContext(UserContext);
 
   const dispatch = useDispatch();
   // const items = useSelector(state => state.trash.items);
@@ -18,18 +21,28 @@ function Text() {
   const handleChange = (e) => {
     const value = e.target.value;
     setinputText(value);
-     if(!isSaved && value.length <= 45) {
-    setuserName(value);
-  }
+
+    if (!isSaved && value.length <= 45) {
+      setuserName(value);
+       dispatch(addItems(loggedInUser));
+    }
   };
 
   const handleKeyDown = (e) => {
-    if(e.key == 'Enter' && !isSaved){
-        setisSaved(true);
+    if (e.key == "Enter" && !isSaved) {
+      setisSaved(true);
+    } else if (
+      e.key == "Backspace" &&
+      isSaved &&
+      e.target.selectionStart == loggedInUser.length
+    ) {
+      setisSaved(false);
+      setuserName(inputText);
+      dispatch(addItems(inputText));
     }
-  }
+  };
 
-  const{loggedInUser, setuserName} = useContext(UserContext);
+  // const{loggedInUser, setuserName} = useContext(UserContext);
 
   return (
     <>
@@ -44,18 +57,14 @@ function Text() {
         <textarea
           className="bg-slate-400 h-screen w-full pl-3"
           value={inputText}
-          //  placeholder="Type something here..."
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-        >
-        </textarea>
+        ></textarea>
 
         {/* <input className="border border-black p-1 h-7 rounded-md"
           placeholder="username"
           value={loggedInUser}
           onChange={(e) => setuserName(e.target.value)} /> */}
-
-
       </div>
     </>
   );

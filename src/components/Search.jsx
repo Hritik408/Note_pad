@@ -14,7 +14,9 @@ function Search({ showButton }) {
   // console.log(loggedInUser);
   return (
     <> 
-      <div className=" bg-slate-700  h-screen flex">
+    <div className="w-72">
+      <div className="flex">
+
         <div className="pt-1 pl-1 border-b border-b-grey pb-1">
           <input
             type="text"
@@ -34,12 +36,13 @@ function Search({ showButton }) {
           </div>
         )}
 
-        
-        <div>
+      </div>
+         
+          <div className="bg-red-400">
           {loggedInUser}
           </div>
 
-      </div>
+          </div>
     </>
   );
 }

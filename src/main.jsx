@@ -13,18 +13,20 @@ import UserContext from "./utils/UserContext.jsx";
 
 const AppLayout = () => {
 
-  const [userName, setuserName] = useState();
+  // const [userName, setuserName] = useState();
+  const [loggedInUser, setuserName] = useState('');
 
-  useEffect(() => {
-    const data = {
-      name : ""
-    }
-    setuserName(data.name)
-  }, [])
+  // useEffect(() => {
+  //   const data = {
+  //     name : ""
+  //   }
+  //   setuserName(data.name)
+  // }, [])
 
   return (  // here we pass setuserName for updating the value of userName
     <Provider store={appStore}> 
-      <UserContext.Provider value = {{loggedInUser : userName, setuserName}}>
+      {/* <UserContext.Provider value = {{loggedInUser : userName, setuserName}}> */}
+      <UserContext.Provider value = {{loggedInUser , setuserName}}>
         <>
           <div className="flex">
             <Left />

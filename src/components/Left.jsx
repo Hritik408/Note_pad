@@ -6,14 +6,15 @@ function Left() {
     <>
       <div className=" bg-slate-600 w-[16%] h-screen">
         <div className="pt-3 pb-3 hover:bg-green-700">
-          <Link to="new_note">
+          {/* <Link to="new_note"> */}
             <button className="">
+            <Link to="new_note">
               <span className="text-white pl-3 pr-28">
-                {" "}
                 <span className="bg-white">➕</span> New notes
               </span>
+              </Link>
             </button>
-          </Link>
+          {/* </Link> */}
         </div>
 
         <div className="hover:bg-blue-700 pt-1 pb-1 cursor-pointer">
