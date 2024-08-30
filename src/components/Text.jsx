@@ -61,10 +61,6 @@ function Text({myvalue}) {
           onKeyDown={handleKeyDown}
         ></textarea>
 
-        {/* <input className="border border-black p-1 h-7 rounded-md"
-          placeholder="username"
-          value={loggedInUser}
-          onChange={(e) => setuserName(e.target.value)} /> */}
       </div>
     </>
   );

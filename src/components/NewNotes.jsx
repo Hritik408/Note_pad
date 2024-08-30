@@ -15,4 +15,4 @@ function NewNotes() {
   );
 }
 
-export default NewNotes; //
+export default NewNotes; 

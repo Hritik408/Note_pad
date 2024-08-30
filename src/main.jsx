@@ -24,7 +24,7 @@ const AppLayout = () => {
   // }, [])
 
   return (  // here we pass setuserName for updating the value of userName
-    <Provider store={appStore}> 
+    <Provider store={appStore}>  
       {/* <UserContext.Provider value = {{loggedInUser : userName, setuserName}}> */}
       <UserContext.Provider value = {{loggedInUser , setuserName}}>
         <>
@@ -34,7 +34,7 @@ const AppLayout = () => {
           </div>
         </>
         </UserContext.Provider>
-    </Provider>
+    </Provider> // it provides reduxStore to our application  
   );
 };
 
