@@ -1,12 +1,12 @@
- import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-const favoriteSlice = createSlice({
-    name: "favorite",
+const tempSlice = createSlice({
+    name: "temp",
     initialState: {
         items: [],
     },
     reducers: {
-        addThing: (state, action) => {
+        addtemp: (state, action) => {
             state.items.push(action.payload);
         },
         removeItem: (state, action) => {
@@ -18,6 +18,6 @@ const favoriteSlice = createSlice({
     }
 })
 
-export const { addThing, removeItem, clearItem } = favoriteSlice.actions;
+export const { addtemp, removeItem, clearItem } = tempSlice.actions;
 
-export default favoriteSlice.reducer;
+export default tempSlice.reducer;

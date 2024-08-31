@@ -19,7 +19,7 @@ function Left() {
 
         <div className="hover:bg-blue-700 pt-1 pb-1 cursor-pointer">
           <Link to="/scratch">
-            <button className="">
+            <button >
               <span className="text-white pl-3 ">📝 Scratch pad</span>
             </button>
           </Link>
@@ -32,11 +32,13 @@ function Left() {
           </button>
         </div>
 
+        <Link to="/favorite">
         <div className="hover:bg-blue-700 pt-1 pb-1 cursor-pointer">
           <button>
             <span className="text-white pl-3 ">⭐ Favorite</span>
           </button>
         </div>
+        </Link>
 
         <Link to="/trash">
         <div className="hover:bg-blue-700 pt-1 pb-1 cursor-pointer">

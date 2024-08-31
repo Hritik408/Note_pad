@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid"
 
-const newnotesSlice = createSlice({
-  name: "newNotes",
+const savedSlice = createSlice({
+  name: "saved",
   initialState: {
     items: [],
   },
   reducers: {
-    addItems: (state, action) => {
+    addSaved: (state, action) => {
       const newItem = {text: action.payload, id: uuidv4()};
       state.items.push(newItem);
       },
@@ -21,6 +21,6 @@ const newnotesSlice = createSlice({
   },
 });
 
-export const { addItems, removeItem, clearTrash } = newnotesSlice.actions;
+export const { addSaved, removeItem, clearTrash } = savedSlice.actions;
 
-export default newnotesSlice.reducer;  // here we export one reducer
+export default savedSlice.reducer;  // here we export one reducer

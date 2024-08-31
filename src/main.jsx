@@ -10,6 +10,7 @@ import appStore from "./utils/appStore.jsx";
 import { Provider } from "react-redux";
 import Trash from "./components/Trash.jsx";
 import UserContext from "./utils/UserContext.jsx";
+import Favorite from "./components/Favorite.jsx";
 
 const AppLayout = () => {
 
@@ -58,6 +59,10 @@ const appRoute = createBrowserRouter([
       {
         path: "/trash",
         element: <Trash />,
+      },
+      {
+        path: "/favorite",
+        element: <Favorite />,
       },
     ],
   },

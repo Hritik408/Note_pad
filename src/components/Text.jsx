@@ -2,7 +2,9 @@ import React, { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/trashSlice";
 import UserContext from "../utils/UserContext";
-import { addItems } from "../utils/newnotesSlice";
+import { addSaved } from "../utils/savedSlice";
+import { addtemp } from "../utils/tempSlice";
+import { addThing } from "../utils/FavoriteSlice";
 
 function Text({myvalue}) {
 
@@ -18,27 +20,38 @@ function Text({myvalue}) {
     setinputText(""); // clear the text after saving
   };
 
+  const handleSave_favorite = () => {
+    dispatch(addThing(inputText));
+    setinputText(""); // clear the text after saving
+  };
+
   const handleChange = (e) => {
     const value = e.target.value;
     setinputText(value);
+    // console.log(value);
 
     if (!isSaved && value.length <= 45) {
       setuserName(value);
-       dispatch(addItems(loggedInUser));
+      //  dispatch(addSaved(loggedInUser));
     }
   };
 
   const handleKeyDown = (e) => {
     if (e.key == "Enter" && !isSaved) {
       setisSaved(true);
-    } else if (
+    //  console.log(e.target.value);
+    const value = e.target.value;
+      // dispatch(addSaved(e.target.value));
+      dispatch(addtemp(value));
+    } 
+    else if (
       e.key == "Backspace" &&
       isSaved &&
       e.target.selectionStart == loggedInUser.length
     ) {
       setisSaved(false);
       setuserName(inputText);
-      dispatch(addItems(inputText));
+      dispatch(addSaved(inputText));
     }
   };
 
@@ -50,7 +63,7 @@ function Text({myvalue}) {
         <button className="text-blue-500" onClick={handleSave_trash}>
           Trash
         </button>
-        <button className="text-purple-500 ml-3" onClick={handleSave_trash}>
+        <button className="text-purple-500 ml-3" onClick={handleSave_favorite}>
           Favorite
         </button>
 

@@ -1,14 +1,23 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearTrash } from "../utils/trashSlice";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 
 function Search({ showButton }) {
-  const dispatch = useDispatch();
+
+  // const items = useSelector((store) => store.saved.items);
+  // console.log(items);
+
+    const prod = useSelector((store) => store.temp.items);
+
+
+  // const dispatch = useDispatch();
   const handleClear = () => {
     dispatch(clearTrash());
 
   };
+
+
 
   const {loggedInUser} = useContext(UserContext);  // {loggedInUser} must be same as the in the UserContext
   // console.log(loggedInUser);
@@ -37,11 +46,19 @@ function Search({ showButton }) {
         )}
 
       </div>
-         
-          <div className="bg-red-400">
+
+          <div className="bg-red-400  ">
           {loggedInUser}
           </div>
 
+          <div className="flex flex-col flex-grow bg-red-50">
+
+            {prod.map((it) => (
+                <div className="pl-2 pt-2 text-red-700 border-b-2 ">{it}</div>
+            ))}
+            
+        </div> 
+          
           </div>
     </>
   );

@@ -1,12 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import trashReducer from "./trashSlice";
+import trashducer from "./trashSlice";
 // import favoriteReducer from "./FavoriteSlice"
-import newnotesReducer from "./FavoriteSlice"
+import savedReducer from "./savedSlice";
+import FavoriteSlice from "./FavoriteSlice";
+import tempSlice from "./tempSlice";
+// import savedSlice from "./savedSlice";
 
 const appStore = configureStore({
     reducer: {
-        trash: trashReducer,
-        newNotes: newnotesReducer,
+        trash: trashducer,  
+        saved: savedReducer,
+        favorite: FavoriteSlice,
+        temp: tempSlice,
     }
 })
 
